@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 12:11:40 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/05 12:12:50 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/20 12:04:49 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ int main(int argc, char **argv)
 				if (flag)
 					write(1, "   ", 3);
 				flag = 0;
-				write(1, &argv[1][i], 1);
 			}
+			write(1, &argv[1][i], 1);
 			i++;
 		}
 	}

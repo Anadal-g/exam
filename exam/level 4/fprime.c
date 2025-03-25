@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 13:34:27 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/06 13:53:30 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/17 13:48:07 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,34 +23,30 @@
 	The input, when there is one, will be valid.
 */
 
-
-#include <stdio.h>
-#include <stdlib.h>
-
-int main(int argc, char **argv)
+void	fprime(int n)
 {
-	int i = 2;
-	int num;
-	num = atoi(argv[1]);
+	int		i = 2;
 
-	if (argc == 2)
+	if (n == 1)
+		printf("1");
+	while (n > 1)
 	{
-		if (num ==1)
-			printf("1");
-		while (i <= num)
+		if (n % i == 0)
 		{
-			if (num % i == 0)
-			{
-				printf("%d", i);
-				if (num == i)
-					break;
+			printf("%d", i);
+			n /= i; 
+			if (n > 1)
 				printf("*");
-				num = num / i;
-				i = 2;
-			}
-			i++;
 		}
-		
+		else
+			i++;
 	}
+}
+
+int		main(int argc, char **argv)
+{
+	if (argc == 2)
+		fprime(atoi(argv[1]));
 	printf("\n");
+	return (0);
 }

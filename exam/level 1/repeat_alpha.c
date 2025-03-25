@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 13:38:14 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/01/16 08:01:13 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/20 12:18:48 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int	main(int argc, char **argv)
 		{
 			if (argv[1][i] >= 'A' && argv[1][i] <= 'Z')
 			{
-				letter = argv[1][i] - 'A' + 1; // Número de repeticiones basado en posición
+				letter = argv[1][i] - 'A' + 1;
 				while (letter--)
 					write(1, &argv[1][i], 1);
 			}
 			else if (argv[1][i] >= 'a' && argv[1][i] <= 'z')
 			{
-				letter = argv[1][i] - 'a' + 1; // Número de repeticiones basado en posición
+				letter = argv[1][i] - 'a' + 1;
 				while (letter--)
 					write(1, &argv[1][i], 1);
 			}

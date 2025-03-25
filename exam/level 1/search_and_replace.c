@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 10:03:54 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/01/13 10:20:01 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/18 11:37:07 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 		while (argv[1][i])
 		{
 			if (argv[1][i] == argv[2][0])
-				argv[1][i] == argv[3][0];
+				argv[1][i] = argv[3][0];
 			write(1, &argv[1][i], 1);
 			i++;
 		}
