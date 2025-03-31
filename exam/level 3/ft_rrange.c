@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 13:12:22 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/06 13:33:28 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:52:13 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,21 @@
 */
 #include <stdlib.h>
 
-int     *ft_rrange(int start, int end)
+int *ft_rrange(int start, int end)
 {
-	int size = end - start;
-	int *ret;
-	int *pointer;
-
-	pointer = (int *)malloc(sizeof(int)* size);
-	if (!pointer)
-		return NULL;
-	ret = pointer;
-	if (start < end)
-	{
-		while (end >= start)
-        	*pointer++ = end--;
-	}
-	else
-		while (end <= start)
-			*pointer++ = end++;
-	return (ret);	
+    int len = (end - start) + 1;
+    int *result;
+    int i = 0;
+    if (len < 0)
+        len = -len + 1;
+    result = (int *)malloc(sizeof(int) * len);
+    if (!result)
+        return NULL;
+    while (i < len)
+    {
+        result[i] = end;
+        end--;
+        i++;
+    }
+    return result;
 }

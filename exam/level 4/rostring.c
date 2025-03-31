@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 11:51:13 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/04 12:05:19 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/31 11:37:07 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,9 @@ int main(int argc, char **argv)
 
 	if (argc > 1)
 	{
-		//Buscamos el inicio de la primera palabra
 		while (argv[1][i] == ' ' || argv[1][i] == '\t')
-    		i++;;
+    		i++;
 		k = i;
-		//Buscamos el final de la primera palabra
 		while (argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\t')
     		i++;
 		while (argv[1][i])

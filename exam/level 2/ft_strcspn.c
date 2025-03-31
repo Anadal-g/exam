@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 11:28:20 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/06 11:27:57 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:27:02 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ size_t ft_strcspn(const char *s, const char *reject)
 int main()
 {
     char str[] = "hello world";
-    char reject[] = "hedwr";
+    char reject[] = "haaaaa";
     
     printf("Resultado: %zu\n", ft_strcspn(str, reject));
     return 0;

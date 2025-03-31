@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 10:32:26 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/01/10 10:33:57 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/25 17:06:40 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@
 
 void	print_bits(unsigned char octet)
 {
-	int				i = 8;
-	unsigned char	bit;
-
+	int i = 8;
+	unsigned char bit;
 	while (i--)
 	{
 		bit = ((octet >> i) & 1) + '0';

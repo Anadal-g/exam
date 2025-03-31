@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:35:47 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/06 11:52:49 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/25 13:41:54 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,35 @@ char    **ft_split(char *str)
 			return NULL;
 		//copiamos los caracteres de una palabra
 		while (str[i] != ' ' && str[i] != '\t' && str[i] != '\n' && str[i])
-			split[k][j++] == str[i++];
+			split[k][j++] = str[i++];
 		//Volvemos a saltar espacios
 		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
         	i++;
 		k++;
 	}
 	return(split);
+}
+
+int main()
+{
+    char **result;
+    char input[] = "   Hola mundo    \t esto es una prueba \n de   split ";
+    
+    result = ft_split(input);
+
+    // Imprimir las cadenas obtenidas
+    if (result != NULL)
+    {
+        int i = 0;
+        while (result[i] != NULL)
+        {
+            printf("Palabra %d: '%s'\n", i, result[i]);
+            free(result[i]);  // Liberar cada subcadena
+            i++;
+        }
+
+        free(result);  // Liberar el array de punteros
+    }
+
+    return 0;
 }

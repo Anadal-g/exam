@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 13:09:38 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/25 13:14:14 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/03/25 13:24:29 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 	if (argc != 3)
 		write(1, "\n", 1);
 	unsigned int n1 = atoi(argv[1]);
-	unsigned int n2 = atoi(argv[1]);
+	unsigned int n2 = atoi(argv[2]);
 	unsigned int res = gcd(n1, n2);
 	printf("%d\n", res);
 	
