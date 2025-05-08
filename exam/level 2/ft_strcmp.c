@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 12:17:01 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/06 13:09:13 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/08 12:51:42 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,11 @@ int    ft_strcmp(char *s1, char *s2)
 	while (*s1 && (*s1 == *s2))
 	{
 		s1 += 1;
-		s2 += 2;
+		s2 += 1;
 	}
 	return (*s1 - *s2);
 }
 #include <stdio.h>
-
 
 int main()
 {

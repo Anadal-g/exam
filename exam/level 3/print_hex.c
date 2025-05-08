@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 11:31:46 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/25 11:36:58 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/08 11:30:33 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,20 @@
 
 void print_hex(int p)
 {
-	char *str = "0123456789abcdef";
-	if(p ==  0)
+	char *str= "0123456789abcdef";
+	int i = 0;
+	char buffer[8];
+
+	if (p == 0)
 		write(1, "0", 1);
 	while (p)
 	{
-		write(1, &str[p % 16], 1);
+		buffer[i++] = str[p %16];
 		p /= 16;
 	}
-	
-}	
+	while (i--)
+		write(1, &buffer[i], 1);
+}
 
 int	ft_atoi(char *str)
 {
@@ -63,15 +67,10 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (nbr * sign);
-
 }
-
-
-
 int main(int argc, char **argv)
 {
 	if (argc == 2)
-		print_hex(ft_atoi(argv));
+		print_hex(ft_atoi(argv[1]));
 	write(1, "\n", 1);
-	
 }

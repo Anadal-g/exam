@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 13:34:27 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/17 13:48:07 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/07 17:43:36 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 
 	The input, when there is one, will be valid.
 */
+
+#include <stdio.h>*
 
 void	fprime(int n)
 {

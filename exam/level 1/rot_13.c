@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 17:42:58 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/01/07 18:00:22 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:47:56 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 	If the number of arguments is not 1, the program displays a newline.
 
 */
+#include <unistd.h>
 
 int	main(int argc, char **argv)
 {

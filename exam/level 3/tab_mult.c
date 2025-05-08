@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:16:35 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/06 16:30:40 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/07 12:45:41 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 	If there are no parameters, the program displays \n.
 
 */
-
 #include <unistd.h>
 
 int	ft_atoi(char *str)
@@ -44,7 +43,6 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	return (nbr * sign);
-
 }
 
 void ft_putnbr(int n)
@@ -65,7 +63,7 @@ int main(int argc, char **argv)
 		while (i <= 9)
 		{
 			ft_putnbr(i);
-			write (1, " x ", 3);
+			write(1, " x ", 3);
 			ft_putnbr(nbr);
 			write(1, " = ", 3);
 			ft_putnbr(i * nbr);
@@ -73,5 +71,5 @@ int main(int argc, char **argv)
 			i++;
 		}
 	}
-	//write(1, "\n", 1);
+	// No imprimir \n fuera del if
 }

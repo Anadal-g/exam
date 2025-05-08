@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 11:35:19 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/01/13 12:10:26 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/08 13:09:37 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,21 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-
 char *ft_strdup(char *src)
 {
-	int	i = 0; 
-	
+	int i = 0;
 	char *dest;
 
 	while (src[i])
 		i++;
 	dest = malloc(sizeof(char) * (i + 1));
-	if (!dest)
-		return(NULL);
+	if(!dest)
+		return NULL;
+	i = 0;
 	while (src[i])
 	{
 		dest[i] = src[i];
 		i++;
 	}
-	dest[i] = src[i];
-	return(dest);
+	return dest;
 }
