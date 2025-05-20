@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 11:32:36 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/03/06 11:34:08 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/08 17:01:38 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_list_size(t_list *begin_list)
 	int size = 0;
 	while (begin_list)
 	{
-		begin_list = begin_list->data;
+		begin_list = begin_list->next;
 		size++;
 	}
 	return size;

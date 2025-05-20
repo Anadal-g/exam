@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_lst_foreach.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 12:15:19 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/05/08 17:11:25 by anadal-g         ###   ########.fr       */
+/*   Created: 2025/05/08 16:55:58 by anadal-g          #+#    #+#             */
+/*   Updated: 2025/05/08 16:55:59 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-	Write a function that reverses (in-place) a string.
 
-	It must return its parameter.
 
-	Your function must be declared as follows:
-
-	char    *ft_strrev(char *str);
-*/
-
-char		*ft_strrev(char *str)
+void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
 {
-	int i;
-	int	len = 0;
-	char tmp;
-	
-	while (str[i])
-		i++;
-	i--;
-	while (len < i)
+	t_list *list_ptr;
+
+	list_ptr = begin_list;
+	while (list_ptr)
 	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-		i--;
-		len++;
+		(*f)(list_ptr->data);
+		list_ptr = list_ptr->next;
 	}
-	return (str);
-	
 }
