@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 12:30:11 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/05/08 13:17:48 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/22 16:50:24 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,34 +20,30 @@
 */
 
 #include <stdlib.h>
-#include <stdlib.h>
 
-char    *ft_itoa(int nbr)
+char *ft_itoa(int nbr)
 {
-	long n = nbr;
-	int len = (n <= 0);
-	long tmp = n;
-	while (tmp)
-	{
-		tmp /= 10;
-		len++;
-	}
-	char *str = malloc(len +1);
-	if(!str)
-		return NULL;
-	str[len] = '\0';
-	if (n == 0)
-		str[0] = '0';
-	if (n < 0)
-	{
-		str[0] = '-';
-		n = -n;
-	}
-	while (n)
-	{
-		str[--len] = '0' + (n % 10);
-		n /= 10;
-	}
-	return str;
+    long n = nbr;
+    int len = (n <= 0); 
+    long tmp = n;
+    while(tmp)
+    {
+        tmp /= 10;
+        len++;
+    }
+    char *str = malloc(len + 1);
+    if(!str) return NULL;
+    if(n == 0)
+        str[0] = '0';
+    if(n < 0)
+    {
+        str[0] = '-';
+        n = -n;
+    }
+    while(n)
+    {
+        str[--len] = '0' + (n % 10);
+        n /= 10;
+    }
+    return(str);
 }
-

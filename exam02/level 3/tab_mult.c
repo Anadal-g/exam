@@ -6,7 +6,7 @@
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 16:16:35 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/05/07 12:45:41 by anadal-g         ###   ########.fr       */
+/*   Updated: 2025/05/21 13:18:21 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,45 +20,40 @@
 	If there are no parameters, the program displays \n.
 
 */
+
 #include <unistd.h>
 
-int	ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
-	int i = 0;
-	int sign = 1;
-	int nbr = 0;
+	int n = 0;
 
-	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		i++;
-	if (str[i] == '-')
+	while (*str >= '0' && *str <= '9')
 	{
-		sign = -1;
-		i++;
+		n = n * 10 + *str - '0';
+		++str;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = nbr * 10 + (str[i] - '0');
-		i++;
-	}
-	return (nbr * sign);
+	return (n);
 }
 
-void ft_putnbr(int n)
+void	ft_putnbr(int n)
 {
 	if (n >= 10)
 		ft_putnbr(n / 10);
-	write(1, &(char){n % 10 + '0'}, 1);
+
+	char c = (n % 10) + '0';
+	write(1, &c, 1);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char *argv[])
 {
-	int i = 1;
-	int nbr;
+	int	i;
+	int	nbr;
 
-	if (argc == 2)
+	if (argc != 2)
+		write(1, "\n", 1);
+	else
 	{
+		i = 1;
 		nbr = ft_atoi(argv[1]);
 		while (i <= 9)
 		{
@@ -71,5 +66,5 @@ int main(int argc, char **argv)
 			i++;
 		}
 	}
-	// No imprimir \n fuera del if
+	return (0);
 }

@@ -1,25 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lst_foreach.c                                   :+:      :+:    :+:   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anadal-g <anadal-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/08 16:55:58 by anadal-g          #+#    #+#             */
-/*   Updated: 2025/05/08 16:55:59 by anadal-g         ###   ########.fr       */
+/*   Created: 2025/01/07 11:38:55 by anadal-g          #+#    #+#             */
+/*   Updated: 2025/05/21 11:47:04 by anadal-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
+#include <stdio.h>
 
-
-void	ft_list_foreach(t_list *begin_list, void (*f)(void *))
+int *ft_range(int start, int end)
 {
-	t_list *list_ptr;
-
-	list_ptr = begin_list;
-	while (list_ptr)
+	int len;
+	int *result;
+	int i = 0;
+	if(start <= end)
+		len = end - start + 1;
+	else
+		len = start - end + 1;
+	result = (int *)malloc(sizeof(int) * len);
+	if (!result)
+		return NULL;
+	while (i < len)
 	{
-		(*f)(list_ptr->data);
-		list_ptr = list_ptr->next;
+		result[i] = start;
+		if(start < end)
+			start++;
+		else
+			start--;
+		i++;
 	}
+	return result;
+	 
 }
