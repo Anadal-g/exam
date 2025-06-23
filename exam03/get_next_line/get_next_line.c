@@ -13,9 +13,6 @@
 char	*get_next_line(int fd);
 
 #endif
-
-#include "get_next_line.h"
-
 char	*ft_strdup(char *src)
 {
 	char	*dest;
@@ -25,6 +22,8 @@ char	*ft_strdup(char *src)
 	while (src[i])
 		i++;
 	dest = (char *)malloc(sizeof(char) * (i + 1));
+	if(!dest)
+		return NULL;
 	i = 0;
 	while (src[i])
 	{
@@ -56,7 +55,7 @@ char	*get_next_line(int fd)
 				break ;
 		}
 		line[i++] = buffer[buffer_pos++];
-		if (buffer[buffer_pos - 1] == '\n' || i >= sizeof(line) - 1)
+		if (buffer[buffer_pos - 1] == '\n' || i >= (int)(sizeof(line) - 1))
 			break ;
 	}
 	line[i] = '\0';
